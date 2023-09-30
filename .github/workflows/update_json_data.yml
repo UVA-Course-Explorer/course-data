@@ -1,0 +1,36 @@
+name: Update Data
+run-name: Automated Course Data Update 🤖
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+permissions:
+    contents: write
+
+jobs:
+  update_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Install Python Dependencies
+        run: |
+          pip3 install -r requirements.txt
+      - name: Populate Data
+        run: python3 action_script.py
+      - name: Commit and push files
+        run: |
+          git config --global user.name 'uvacourseexplorer-bot'
+          git config --global user.email 'uvacourseexplorer@gmail.com'
+
+          if git diff --quiet --exit-code json/; then
+            echo "No changes detected."
+          else
+            git add json/.
+            git commit -m "[Automated]: json updated"
+            git push origin main
+          fi
