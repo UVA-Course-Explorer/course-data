@@ -1,9 +1,9 @@
 from sql_helper import SQLHelper
 from sis_mappings import *
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
-# import jsonlines
+import pytz
 
 
 class JSONGenerator():
@@ -35,7 +35,6 @@ class JSONGenerator():
             data_map[dict_key] = orgs
             all_orgs += orgs
 
-
         # save json object of data_map
         with open(f'json/latest_sem.json', 'w') as f:
             json.dump(data_map, f)
@@ -43,18 +42,43 @@ class JSONGenerator():
         with open(f'json/departments.json', 'w') as f:
             json.dump(all_orgs, f)
 
+        # generate semester string
+        semester = self.strm_to_str(self.strm)
+
+        # Get the current time in GMT (UTC)
+        current_time = datetime.utcnow()
+
+        # Calculate the timestamp in seconds
+        timestamp_seconds = int(current_time.timestamp())
+
+        metadata = {
+            "semester": semester,
+            "last_updated": timestamp_seconds
+        }
+
+        # Write the timestamp to a JSON file
+        with open('json/metadata.json', 'w') as f:
+            json.dump(metadata, f)
+
 
 
     def convert_time_string(self, original_time):
-        if original_time == "": return ""
+        if original_time == "":
+                    return ""
+
         # Extract the time part (HH:MM:SS)
         time_part = original_time.split('-')[0]
-        # Convert the time string to a datetime object
+        
+        # Create a timezone object for Eastern Time (ET) with DST support
+        eastern_tz = pytz.timezone('US/Eastern')
+        
+        # Convert the time string to a datetime object and localize it to ET
         time_obj = datetime.strptime(time_part, '%H.%M.%S.%f')
-        # Apply the timezone offset (-05:00)
-        est_time = time_obj + timedelta(hours=5)
-        est_time = time_obj
-
+        localized_time = eastern_tz.localize(time_obj)
+        
+        # Convert to Eastern Time (ET) while considering DST
+        est_time = localized_time.astimezone(eastern_tz)
+        
         # Format the time in AM/PM notation
         est_time_formatted = est_time.strftime('%I:%M %p')
         return est_time_formatted
@@ -76,7 +100,6 @@ class JSONGenerator():
                         meeting['start_time'] = self.convert_time_string(meeting['start_time'])
                         meeting['end_time'] = self.convert_time_string(meeting['end_time'])
                     session['instructors'] = eval(session['instructors'])
-
 
                 class_dict = {
                     'catalog_number': catalog_number,
@@ -111,7 +134,6 @@ class JSONGenerator():
                 else:
                     json_file.write('] \n')
 
-
             # Write the closing bracket of the JSON array
             json_file.write('}')
 
@@ -127,7 +149,12 @@ class JSONGenerator():
             season = 'Summer'
         elif season == '8':
             season = 'Fall'
-        return f'{season} {year}'
+        
+        # get the first two digits of the year
+        current_year = datetime.now().year
+        first_two_digits = str(current_year)[:2]
+
+        return f'{season} {first_two_digits}{year}'
 
 
 
