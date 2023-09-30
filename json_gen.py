@@ -51,9 +51,12 @@ class JSONGenerator():
         # Calculate the timestamp in seconds
         timestamp_seconds = int(current_time.timestamp())
 
+        # Get the current time in GMT (UTC)
+        utc_time = str(datetime.now(pytz.utc))
+
         metadata = {
             "semester": semester,
-            "last_updated": timestamp_seconds
+            "last_updated": utc_time
         }
 
         # Write the timestamp to a JSON file
