@@ -1,0 +1,3 @@
+{"Curriculum, Inst & Spec Ed": [ 
+{"catalog_number": 9991, "subject_descr": "Curriculum, Inst & Spec Ed", "subject": "EDIS", "sessions": [{"meetings": [{"days": "-", "start_time": "", "end_time": "", "start_dt": "01/02/2024", "end_dt": "01/12/2024", "facility_id": "-", "facility_descr": "-", "instructor": "April Salerno"}], "subject": "EDIS", "section_type": "IND", "instructors": [{"name": "April Salerno", "email": "ass3jw@virginia.edu"}], "topic": null, "enrollment_total": 0, "class_capacity": 10, "wait_tot": 0, "wait_cap": 0, "catalog_nbr": 9991, "class_section": 1, "descr": "Ed.D. Research", "units": "1 - 12", "display_order": 2}], "descr": "Ed.D. Research", "topic": null, "units": "1 - 12"}] 
+}

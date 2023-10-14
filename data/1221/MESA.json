@@ -1,0 +1,3 @@
+{"Hebrew": [ 
+{"catalog_number": 4993, "subject_descr": "Hebrew", "subject": "HEBR", "sessions": [{"meetings": [{"days": "-", "start_time": "", "end_time": "", "start_dt": "01/03/2022", "end_dt": "01/14/2022", "bldg_cd": "NRN", "bldg_has_coordinates": false, "facility_descr": "Contact Department", "room": "", "facility_id": "NRN", "instructor": "Zvi Gilboa"}], "subject": "HEBR", "section_type": "SEM", "instructors": [{"name": "Zvi Gilboa", "email": "zg7s@virginia.edu"}], "topic": null, "enrollment_total": 1, "class_capacity": 2, "wait_tot": 0, "wait_cap": 0, "catalog_nbr": 4993, "class_section": "001", "descr": "Independent Study in Hebrew", "units": "1 - 3", "display_order": 2}], "descr": "Independent Study in Hebrew", "topic": null, "units": "1 - 3"}] 
+}
