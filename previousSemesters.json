@@ -1,18 +1,1 @@
-[
-    {"name": "2020 Summer", "strm": "1206"},
-    {"name": "2020 Fall", "strm": "1208"},
-    {"name": "2021 January", "strm": "1211"},
-    {"name": "2021 Spring", "strm": "1212"},
-    {"name": "2021 Summer", "strm": "1216"},
-    {"name": "2021 Fall", "strm": "1218"},
-    {"name": "2022 January", "strm": "1221"},
-    {"name": "2022 Spring", "strm": "1222"},
-    {"name": "2022 Summer", "strm": "1226"},
-    {"name": "2022 Fall", "strm": "1228"},
-    {"name": "2023 January", "strm": "1231"},
-    {"name": "2023 Spring", "strm": "1232"},
-    {"name": "2023 Summer", "strm": "1236"},
-    {"name": "2023 Fall", "strm": "1238"},
-    {"name": "2024 January", "strm": "1241"},
-    {"name": "2024 Spring", "strm": "1242"}
-]
+[{"name": "2020 Summer", "strm": "1206"},{"name": "2020 Fall", "strm": "1208"},{"name": "2021 January", "strm": "1211"},{"name": "2021 Spring", "strm": "1212"},{"name": "2021 Summer", "strm": "1216"},{"name": "2021 Fall", "strm": "1218"},{"name": "2022 January", "strm": "1221"},{"name": "2022 Spring", "strm": "1222"},{"name": "2022 Summer", "strm": "1226"},{"name": "2022 Fall", "strm": "1228"},{"name": "2023 January", "strm": "1231"},{"name": "2023 Spring", "strm": "1232"},{"name": "2023 Summer", "strm": "1236"},{"name": "2023 Fall", "strm": "1238"},{"name": "2024 January", "strm": "1241"},{"name": "2024 Spring", "strm": "1242"}]
