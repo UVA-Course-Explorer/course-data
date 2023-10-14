@@ -12,12 +12,13 @@ class JSONGenerator():
         self.table_name = table_name
         self.strm = strm
         self.sql_helper = SQLHelper(self.database_path, self.table_name)
+        self.save_dir = 'data/' + str(strm)
 
     # method to generate main catalog page
     def generate(self):
         # make sure the json directory exists
-        if not os.path.exists('json'):
-            os.makedirs('json')
+        if not os.path.exists(self.save_dir):
+            os.makedirs(self.save_dir)
 
         acad_groups = self.sql_helper.get_unique_acad_groups(self.strm)
         data_map = {}
@@ -30,16 +31,17 @@ class JSONGenerator():
                 orgs.append({
                         "name": f"{acad_org_mapping[org]}",
                         "abbr": org})
+                
                 print(f"\t{acad_org_mapping[org]}")
                 self.generate_json_for_acad_org(org, self.strm)
             data_map[dict_key] = orgs
             all_orgs += orgs
 
         # save json object of data_map
-        with open(f'json/latest_sem.json', 'w') as f:
+        with open(f'{self.save_dir}/latest_sem.json', 'w') as f:
             json.dump(data_map, f)
         
-        with open(f'json/departments.json', 'w') as f:
+        with open(f'{self.save_dir}/departments.json', 'w') as f:
             json.dump(all_orgs, f)
 
         # generate semester string
@@ -60,7 +62,7 @@ class JSONGenerator():
         }
 
         # Write the timestamp to a JSON file
-        with open('json/metadata.json', 'w') as f:
+        with open(f'{self.save_dir}/metadata.json', 'w') as f:
             json.dump(metadata, f)
 
 
@@ -119,7 +121,7 @@ class JSONGenerator():
         # write data to json
         stripped_acad_org = acad_org.lstrip("\'").strip("\'")
 
-        with open(f'json/{stripped_acad_org}.json', 'w') as json_file:
+        with open(f'{self.save_dir}/{stripped_acad_org}.json', 'w') as json_file:
             # Write the opening bracket of the JSON array
             json_file.write('{')
             
@@ -145,7 +147,7 @@ class JSONGenerator():
         year = str(strm)[1:3]
         season = str(strm)[3:]
         if season == '1':
-            season = 'Winter'
+            season = 'January'
         elif season == '2':
             season = 'Spring'
         elif season == '6':

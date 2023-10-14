@@ -1,9 +1,11 @@
 from data_fetcher import DataFetcher
 from json_gen import JSONGenerator
 
-database_path = "data.db"
-table_name = "sessions"
+
 strm = 1238
+database_path = f"data_{strm}.db"
+table_name = "sessions"
+
 num_pages_in_batch = 100    # make sure this is more than number of pages in sis
 
 # fetch data, update db
