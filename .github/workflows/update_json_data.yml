@@ -27,10 +27,10 @@ jobs:
           git config --global user.name 'uvacourseexplorer-bot'
           git config --global user.email 'uvacourseexplorer@gmail.com'
 
-          if git diff --quiet --exit-code json/; then
+          if git diff --quiet --exit-code data/; then
             echo "No changes detected."
           else
-            git add json/.
+            git add data/.
             git commit -m "[Automated]: json updated"
             git push origin main
           fi
