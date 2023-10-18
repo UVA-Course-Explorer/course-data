@@ -2,6 +2,7 @@ name: Update Data
 run-name: Automated Course Data Update 🤖
 
 on:
+  push:
   schedule:
     - cron: '0 * * * *'
 permissions:
