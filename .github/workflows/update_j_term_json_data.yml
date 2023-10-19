@@ -1,12 +1,13 @@
-name: Update Data
+name: Update J-Term Data
 run-name: Automated Course Data Update 🤖
 
 on:
   push:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 0 * * *' # Change this line to run daily at midnight
+
 permissions:
-    contents: write
+  contents: write
 
 jobs:
   update_data:
@@ -22,7 +23,7 @@ jobs:
         run: |
           pip3 install -r requirements.txt
       - name: Populate Data
-        run: python3 action_script.py 1242
+        run: python3 action_script.py 1241
       - name: Commit and push files
         run: |
           git config --global user.name 'uvacourseexplorer-bot'
@@ -34,4 +35,3 @@ jobs:
             git add data/.
             git commit -m "[Automated]: json updated"
             git push origin main
-          fi
