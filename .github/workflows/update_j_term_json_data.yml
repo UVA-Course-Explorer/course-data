@@ -1,13 +1,12 @@
-name: Update J-Term Data
+name: Update Data
 run-name: Automated Course Data Update 🤖
 
 on:
   push:
   schedule:
-    - cron: '0 0 * * *' # Change this line to run daily at midnight
-
+    - cron: '0 0 * * *'
 permissions:
-  contents: write
+    contents: write
 
 jobs:
   update_data:
@@ -35,3 +34,4 @@ jobs:
             git add data/.
             git commit -m "[Automated]: json updated"
             git push origin main
+          fi

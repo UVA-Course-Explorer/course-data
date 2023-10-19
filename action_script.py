@@ -1,8 +1,12 @@
+import sys
 from data_fetcher import DataFetcher
 from json_gen import JSONGenerator
 
 
-strm = 1242
+# read strm from command line
+strm = int(sys.argv[1])
+
+# strm = 1242
 database_path = f"data_{strm}.db"
 table_name = "sessions"
 
