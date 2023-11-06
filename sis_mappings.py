@@ -43,7 +43,7 @@ new_requirement_mapping = {'ASUD-AIP': 'Artistic, Interpretive, Phil',
  'ASUD-WL': 'World Languages'}
 
 
-acad_org_mapping = {'AAS': 'African-American and African Std',
+acad_org_mapping = {'AAS': 'African-American and African Studies',
  'AIRS': 'Air Science',
  'ASL': 'American Sign Language',
  'AMST': 'American Studies',
