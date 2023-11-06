@@ -1,3 +1,0 @@
-{"Jewish Studies": [ 
-{"catalog_number": 4980, "subject_descr": "Jewish Studies", "subject": "JWST", "sessions": [{"meetings": [{"days": "-", "start_time": "", "end_time": "", "start_dt": "01/17/2024", "end_dt": "04/30/2024", "facility_id": "-", "facility_descr": "-", "instructor": "Gabriel Finder"}], "subject": "JWST", "section_type": "IND", "instructors": [{"name": "Gabriel Finder", "email": "gf6n@virginia.edu"}], "topic": null, "enrollment_total": 0, "class_capacity": 5, "wait_tot": 0, "wait_cap": 0, "catalog_nbr": 4980, "class_section": "001", "descr": "Supervised Research", "units": "3", "display_order": 2}], "descr": "Supervised Research", "topic": null, "units": "3"}] 
-}
