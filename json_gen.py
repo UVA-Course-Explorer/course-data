@@ -37,9 +37,11 @@ class JSONGenerator():
             data_map[dict_key] = orgs
             all_orgs += orgs
 
+        all_orgs.sort(key=lambda x: x['name'])
+
         # save json object of data_map
         with open(f'{self.save_dir}/latest_sem.json', 'w') as f:
-            json.dump(data_map, f)
+            json.dump(data_map, f, sort_keys=True)
         
         with open(f'{self.save_dir}/departments.json', 'w') as f:
             json.dump(all_orgs, f)
