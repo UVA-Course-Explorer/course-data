@@ -98,7 +98,7 @@ class SQLHelper:
         return [row[0] for row in sorted(unique_catalog_numbers)]
 
 
-    def get_sessions_for_class(self, strm, acad_org, subject_descr, catalog_nbr):
+    def get_sessions_for_class_with_org(self, strm, acad_org, subject_descr, catalog_nbr):
         # get all the sessions for a class
         subject_descr = subject_descr.replace("'", "''")
 

@@ -175,9 +175,9 @@ class JSONGenerator():
             catalog_numbers = self.sql_helper.catalog_numbers_for_subject(strm, acad_org, subject_descr)
             for catalog_number in catalog_numbers:
 
-                session_list = self.sql_helper.get_sessions_for_class(strm, acad_org, subject_descr, catalog_number)
+                session_list = self.sql_helper.get_sessions_for_class_with_org(strm, acad_org, subject_descr, catalog_number)
 
-                class_dict = self.generate_dict_for_class(strm, catalog_number, subject_descr, session_list)
+                class_dict = self.generate_dict_for_class(catalog_number, subject_descr, session_list)
                 data[subject_descr].append(class_dict)
         
         # write data to json
