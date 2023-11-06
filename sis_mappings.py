@@ -38,7 +38,7 @@ new_requirement_mapping = {'ASUD-AIP': 'Disciplines - Artistic, Interpretive, & 
  'ASUD-LS': 'Disciplines - Living Systems',
  'ASUD-QCD': 'Literacies - Quantification, Computation, & Data Analysis',
  'ASUD-SS': 'Disciplines - Science and Society',
- 'ASUD-R21C2': 'Literacies - Second Writing Requirement',
+ 'ASUR-R21C2': 'Literacies - Second Writing Requirement',
  'ASUD-SES': 'Disciplines - Social & Economic Systems',
  'ASUD-WL': 'Literacies - World Languages'}
 
