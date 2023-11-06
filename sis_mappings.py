@@ -36,11 +36,11 @@ new_requirement_mapping = {'ASUD-AIP': 'Disciplines - Artistic, Interpretive, & 
  'ASUR-R21C1': 'Literacies - First Writing Requirement',
  'ASUD-HP': 'Disciplines - Historical Perspectives',
  'ASUD-LS': 'Disciplines - Living Systems',
- 'ASUD-QCD': 'Literacies - Quantification, Computation, & Data Analysis',
+ 'ASUQ-QCD': 'Literacies - Quantification, Computation, & Data Analysis',
  'ASUD-SS': 'Disciplines - Science and Society',
  'ASUR-R21C2': 'Literacies - Second Writing Requirement',
  'ASUD-SES': 'Disciplines - Social & Economic Systems',
- 'ASUD-WL': 'Literacies - World Languages'}
+ 'ASUW-WL': 'Literacies - World Languages'}
 
 
 acad_org_mapping = {'AAS': 'African-American and African Studies',
