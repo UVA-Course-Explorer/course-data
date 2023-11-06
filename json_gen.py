@@ -53,7 +53,7 @@ class JSONGenerator():
 
                 # add the requirements to the orgs list
             
-            
+            orgs.sort(key=lambda x: x['name'])
             data_map[dict_key] = orgs
             # all_orgs += orgs
 
