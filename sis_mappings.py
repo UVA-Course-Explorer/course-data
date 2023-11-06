@@ -20,27 +20,27 @@ acad_group_mapping = {
 }
 
 
-traditional_requirement_mapping = {'SW': 'Second Writing Requirement',
- 'FL': 'Foreign Language Requirement',
- 'HNS': 'Historical Stdy/Non-West/SWR',
- 'HS': 'Historical Studies',
- 'HSNW': 'Historical Stdy & Non-Western',
- 'NW': 'Non-Western Perspectives',
- 'SWHS': 'Second Writing & Historical St',
- 'SWNW': 'Second Writing & None-Western'}
+# traditional_requirement_mapping = {'SW': 'Second Writing Requirement',
+#  'FL': 'Foreign Language Requirement',
+#  'HNS': 'Historical Stdy/Non-West/SWR',
+#  'HS': 'Historical Studies',
+#  'HSNW': 'Historical Stdy & Non-Western',
+#  'NW': 'Non-Western Perspectives',
+#  'SWHS': 'Second Writing & Historical St',
+#  'SWNW': 'Second Writing & None-Western'}
 
 
-new_requirement_mapping = {'ASUD-AIP': 'Artistic, Interpretive, Phil',
- 'ASUD-CMP': 'Chem/Map/Physical Universe',
- 'ASUD-CSW': 'Cultures/Societies World',
- 'ASUR-R21C1': 'First Writing',
- 'ASUD-HP': 'Historical Perspectives',
- 'ASUD-LS': 'Living Systems',
- 'ASUD-QCD': 'Quantif, Computation, Data, An',
- 'ASUD-SS': 'Science and Society',
- 'ASUD-R21C2': 'Second Writing',
- 'ASUD-SES': 'Social & Economic Systems',
- 'ASUD-WL': 'World Languages'}
+new_requirement_mapping = {'ASUD-AIP': 'Disciplines - Artistic, Interpretive, & Philosophical Inquiry',
+ 'ASUD-CMP': 'Disciplines - Chemical, Mathematical, and Physical Universe',
+ 'ASUD-CSW': 'Disciplines - Cultures & Societies of the World',
+ 'ASUR-R21C1': 'Literacies - First Writing Requirement',
+ 'ASUD-HP': 'Disciplines - Historical Perspectives',
+ 'ASUD-LS': 'Disciplines - Living Systems',
+ 'ASUD-QCD': 'Literacies - Quantification, Computation, & Data Analysis',
+ 'ASUD-SS': 'Disciplines - Science and Society',
+ 'ASUD-R21C2': 'Literacies - Second Writing Requirement',
+ 'ASUD-SES': 'Disciplines - Social & Economic Systems',
+ 'ASUD-WL': 'Literacies - World Languages'}
 
 
 acad_org_mapping = {'AAS': 'African-American and African Studies',
