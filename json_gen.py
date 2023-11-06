@@ -48,6 +48,16 @@ class JSONGenerator():
                     orgs.append({
                         "name": f"{new_requirement_mapping[req]}",
                         "abbr": req})
+                
+                # generate json for engagment
+                self.generate_json_for_engagement(self.strm)
+                orgs.append({
+                    "name": f"Engagement",
+                    "abbr": 'EGMT'})
+                
+                
+                # generate json for engagment
+
 
                 # generate json for each requirement
 
@@ -86,6 +96,9 @@ class JSONGenerator():
         # Write the timestamp to a JSON file
         with open(f'{self.save_dir}/metadata.json', 'w') as f:
             json.dump(metadata, f)
+
+
+
 
 
 
@@ -151,6 +164,18 @@ class JSONGenerator():
             'units': session_list[0]['units'],
             }
         return class_dict
+
+
+
+    def generate_json_for_engagement(self, strm):
+        data = {'Engagement': []}
+        catalog_numbers = self.sql_helper.catalog_numbers_for_subject(strm, 'CGASD', 'Engagement')
+        for catalog_number in catalog_numbers:
+            session_list = self.sql_helper.get_sessions_for_class_with_org(strm, 'CGASD', 'Engagement', catalog_number)
+            class_dict = self.generate_dict_for_class(catalog_number, 'Engagement', session_list)
+            data['Engagement'].append(class_dict)
+        filename = f'{self.save_dir}/EGMT.json'
+        self.write_data_dict_to_json(data, filename)
 
 
     def generate_json_for_attr(self, attr, strm):

@@ -96,7 +96,8 @@ class SQLHelper:
         unique_catalog_numbers = cursor.fetchall()
         conn.close()
         return [row[0] for row in sorted(unique_catalog_numbers)]
-
+    
+    
 
     def get_sessions_for_class_with_org(self, strm, acad_org, subject_descr, catalog_nbr):
         # get all the sessions for a class
