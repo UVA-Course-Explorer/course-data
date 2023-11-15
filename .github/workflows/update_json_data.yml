@@ -4,7 +4,7 @@ run-name: Automated Course Data Update 🤖
 on:
   push:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 * * * *'
 permissions:
   contents: write
 
