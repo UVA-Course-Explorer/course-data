@@ -22,7 +22,7 @@ jobs:
         run: |
           pip3 install -r requirements.txt
       - name: Populate Data
-        run: python3 action_script.py 1242
+        run: python3 action_script.py 1248
       - name: Commit and push files
         run: |
           git config --global user.name 'uvacourseexplorer-bot'
