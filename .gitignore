@@ -1,1 +1,5 @@
 pycache/
+.DS_Store
+playing_around
+.ipynb_checkpoints/
+fix_portuguese.py
