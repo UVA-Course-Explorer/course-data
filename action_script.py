@@ -10,7 +10,7 @@ strm = int(sys.argv[1])
 database_path = f"data_{strm}.db"
 table_name = "sessions"
 
-num_pages_in_batch = 200    # make sure this is more than number of pages in sis
+num_pages_in_batch = 300    # make sure this is more than number of pages in sis
 
 # fetch data, update db
 fetcher = DataFetcher(database_path, table_name, strm, num_pages_in_batch)
