@@ -8,7 +8,7 @@ import pandas as pd
 # there's probably a better way to get around this
 
 class DataFetcher:
-    def __init__(self, path_to_db, table_name, strm, num_pages_in_batch=100):
+    def __init__(self, path_to_db, table_name, strm, num_pages_in_batch=150):
         self.path_to_db = path_to_db
         self.table_name = table_name
         self.strm = strm
