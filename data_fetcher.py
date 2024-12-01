@@ -43,12 +43,20 @@ class DataFetcher:
                 print(f"Fetching pages {start_page} to {end_page}")
                 tasks = [asyncio.create_task(self.fetch_courses(session, page)) for page in range(start_page, end_page)]
                 results = await asyncio.gather(*tasks)  # Fetch all pages concurrently
-                for page, data in enumerate(results):
-                    if data == []:
-                        print(f"Page {page} had no results, so we're done")
+                
+
+
+                for page, response_data in enumerate(results):
+                    if len(response_data["classes"]) == 0:
                         in_progress = False
-                    for course in data:
-                        self.courses.append(course)
+                        print(f"Page {page} had no results, setting in_progress = False")
+                    else:
+                        data = response_data["classes"]
+                        if data == []:
+                            in_progress = False
+                        for course in data:
+                            self.courses.append(course)
+                # in_progress = False
                 iteration += 1
             
             # with open("sis_data.pkl", "wb") as f:
