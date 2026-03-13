@@ -24,13 +24,25 @@ class DataFetcher:
         url = self.get_base_url() + f"&page={page}"
         print(f"Fetching data for page {page}")
         async with session.get(url) as response:
-            if response.status == 200:
-                data = await response.json()
-                print(f"Got results for page {page} of {self.strm}")
-                return data
-            else:
+            if response.status != 200:
                 print(f"Failed to fetch data for page {page}")
-                return []
+                return {"classes": []}
+
+            content_type = response.headers.get("Content-Type", "")
+            if "application/json" not in content_type:
+                print(
+                    f"Stopping at page {page} for {self.strm}: expected JSON but received {content_type}"
+                )
+                return {"classes": []}
+
+            try:
+                data = await response.json()
+            except aiohttp.ContentTypeError:
+                print(f"Stopping at page {page} for {self.strm}: SIS returned a non-JSON page")
+                return {"classes": []}
+
+            print(f"Got results for page {page} of {self.strm}")
+            return data
 
 
     async def get_all_courses_in_semester(self):
@@ -46,7 +58,8 @@ class DataFetcher:
                 
 
 
-                for page, response_data in enumerate(results):
+                for page_offset, response_data in enumerate(results):
+                    page = start_page + page_offset
                     if len(response_data["classes"]) == 0:
                         in_progress = False
                         print(f"Page {page} had no results, setting in_progress = False")

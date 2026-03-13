@@ -21,6 +21,10 @@ class JSONGenerator():
         # make sure the json directory exists
         if not os.path.exists(self.save_dir):
             os.makedirs(self.save_dir)
+        else:
+            for filename in os.listdir(self.save_dir):
+                if filename.endswith('.json'):
+                    os.remove(os.path.join(self.save_dir, filename))
 
         acad_groups = self.sql_helper.get_unique_acad_groups(self.strm)
         data_map = {}
@@ -228,7 +232,6 @@ class JSONGenerator():
         first_two_digits = str(current_year)[:2]
 
         return f'{season} {first_two_digits}{year}'
-
 
 
 

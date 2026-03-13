@@ -324,7 +324,11 @@ def generate_history_for_strm(strm):
     changed_departments = 0
 
     for data_path in iter_catalog_data_files(strm):
-        department_snapshot = json.loads(data_path.read_text())
+        try:
+            department_snapshot = json.loads(data_path.read_text())
+        except json.JSONDecodeError:
+            print(f"Skipping malformed department snapshot {data_path}")
+            continue
         department = data_path.stem
         history_path = history_path_for_department(strm, department)
         history_document = load_history_document(history_path, strm, department)
