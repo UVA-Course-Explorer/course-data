@@ -110,7 +110,7 @@ class SQLHelper:
         
         if type(catalog_nbr) == str and catalog_nbr[0] != "'":
             catalog_nbr = f"'{catalog_nbr}'"
-        query = f"""SELECT meetings, subject, section_type, instructors, topic, enrollment_total, class_capacity, wait_tot, wait_cap, subject, catalog_nbr, class_section, descr, units,
+        query = f"""SELECT meetings, subject, section_type, instructors, topic, enrollment_total, class_capacity, wait_tot, wait_cap, subject, catalog_nbr, class_nbr, class_section, descr, units,
         CASE
             WHEN section_type = 'Lecture' THEN 1
             ELSE 2
@@ -134,7 +134,7 @@ class SQLHelper:
         
         if type(catalog_nbr) == str and catalog_nbr[0] != "'":
             catalog_nbr = f"'{catalog_nbr}'"
-        query = f"""SELECT meetings, subject, section_type, instructors, topic, enrollment_total, class_capacity, wait_tot, wait_cap, subject, catalog_nbr, class_section, descr, units,
+        query = f"""SELECT meetings, subject, section_type, instructors, topic, enrollment_total, class_capacity, wait_tot, wait_cap, subject, catalog_nbr, class_nbr, class_section, descr, units,
         CASE
             WHEN section_type = 'Lecture' THEN 1
             ELSE 2

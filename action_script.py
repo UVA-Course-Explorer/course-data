@@ -1,6 +1,7 @@
 import sys
 from data_fetcher import DataFetcher
 from json_gen import JSONGenerator
+from history_gen import generate_history_for_strm
 
 
 # read strm from command line
@@ -19,3 +20,6 @@ fetcher.run()
 # generate json files
 json_gen = JSONGenerator(database_path, table_name, strm)
 json_gen.generate()
+
+# update the published enrollment history snapshot for this semester
+generate_history_for_strm(strm)
